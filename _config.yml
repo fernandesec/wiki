@@ -1,0 +1,13 @@
+title: Fernandesec Wiki
+description: Secure AI agent deployment, governance, admission control, and evidence for regulated environments.
+baseurl: "/wiki"
+url: "https://fernandesec.github.io"
+theme: minima
+markdown: kramdown
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
