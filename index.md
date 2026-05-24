@@ -12,6 +12,7 @@ The private source workspace contains the raw SEC540-derived corpus, specs, skil
 
 - [FDSecE secure AI agent wiki plan](./roadmap/fdsece-secure-ai-agent-wiki-plan.md)
 - [Deterministic governance and evals for agentic systems](./concepts/deterministic-governance-and-evals.md)
+- [OpenAI FDSecE interview preparation brief](./interview/openai-fdsece-interview-prep.md)
 
 ## Publishing model
 
