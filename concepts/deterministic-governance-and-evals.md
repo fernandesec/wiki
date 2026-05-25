@@ -19,9 +19,9 @@ The core pattern is simple:
 
 The production north star is:
 
-> One workload contract, one pinned policy bundle, one typed request model, one evidence schema, many agent frameworks and cloud substrates.
+> One Deep Agents harness, one OpenShell runtime boundary, one workload contract, one pinned policy bundle, one typed request model, one evidence schema, many cloud substrates.
 
-Agent frameworks can differ. Cloud providers can differ. The governance primitive should not. Every production agent should prove the same minimum state before it can act:
+Cloud providers can differ. The governance primitive should not. The default harness is Deep Agents on LangGraph because this is a cross-platform architecture, and the default execution boundary is OpenShell because it supports provider-neutral sandboxing across Docker, Podman, MicroVM, and Kubernetes patterns. Every production agent should prove the same minimum state before it can act:
 
 - The workload has an owner, tenant, use case, data classes, allowed providers, runtime profile, and evidence sink.
 - The prompt, model, tool registry, schemas, eval set, and policy bundle are versioned.
@@ -38,7 +38,7 @@ User / API
    |
    v
 Agent harness
-   |  Deep Agents / LangGraph / custom harness
+   |  Deep Agents on LangGraph
    |  prompt version, model version, input set hash
    v
 Foundation model
@@ -71,7 +71,9 @@ The foundation model sits inside the harness. It does not sit inside the trusted
 
 ## Deep Agents In The Reference Architecture
 
-LangChain Deep Agents is a strong fit for the `Agent harness` layer. It provides planning, filesystem-backed context management, subagent spawning, long-running state, and the LangGraph runtime. Those are orchestration capabilities, not authorization guarantees.
+LangChain Deep Agents is the standard `Agent harness` layer for this blueprint. It provides planning, filesystem-backed context management, subagent spawning, long-running state, and the LangGraph runtime. Those are orchestration capabilities, not authorization guarantees.
+
+This is an intentional provider-neutral choice. Cloud-native agent SDKs can still appear behind the AI gateway, A2A governor, or privileged executor, but they should not define the core platform for a cross-cloud regulated architecture. An AWS-only environment may reasonably choose Bedrock-native ergonomics for a local workload, but that is a scoped adapter decision, not the Fernandesec reference architecture.
 
 | Deep Agents capability | Reference architecture role | Required deterministic boundary |
 |---|---|---|

@@ -120,7 +120,7 @@ Then cover:
 - ToolRequest schema and validation.
 - Tool registry and category-level allowlists.
 - OPA/conftest policy for request admission.
-- Runtime sandbox such as OpenShell or equivalent constrained execution.
+- Runtime sandbox through OpenShell as the provider-neutral execution boundary.
 - Network deny-by-default and scoped credentials.
 - Data classification, residency, and retrieval ACLs.
 - HITL for high-risk actions.
